@@ -13,8 +13,7 @@ Este repositorio contiene una configuración lista para usar de **GLPI** utiliza
 ### 1. Clona el repositorio
 
 ```bash
-git clone https://github.com/tuusuario/glpi-docker.git
-cd glpi-docker
+git clone https://github.com/codadry/glpi.git
 ````
 
 ### 2. Inicia los contenedores
