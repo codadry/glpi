@@ -1,0 +1,32 @@
+services:
+
+  mysql:
+    image: mariadb:10.6
+    container_name: mysql
+    hostname: mysql
+    volumes:
+      - ./mysql:/var/lib/mysql
+    env_file:
+      - ./mysql.env
+    restart: unless-stopped
+    networks:
+      - general-net
+
+
+  glpi:
+    image: diouxx/glpi
+    container_name : glpi
+    hostname: glpi
+    ports:
+      - "8200:80"
+    volumes:
+      - ./glpi/:/var/www/html/glpi
+    environment:
+      - TIMEZONE=America/Mexico_City
+    restart: unless-stopped
+    networks:
+      - general-net
+
+networks:
+  general-net:
+    external: true  # Usa la red ya creada
